@@ -1,30 +1,214 @@
+<style>
+/* スライドページの基本レイアウト */
+.slide-page {
+    width: 1280px;
+    height: 720px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
+/* 目次セクション */
+.toc {
+    background-color: #f9fafb;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
 
-  <style>
-    /* カスタムCSSはここに挿入 */
-    /* スライドページの基本レイアウト */
-    .slide-page { width: 1280px; height: 720px; margin: 0 auto; padding: 2rem; background-color: #ffffff; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); border-radius: 16px; display: flex; flex-direction: column; justify-content: space-between; }
-    .toc { background-color: #f9fafb; padding: 2rem; border-radius: 16px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); }
-    .toc a { display: block; color: #1a56db; font-weight: 600; margin-bottom: 0.75rem; text-decoration: none; transition: color 0.3s ease; }
-    .toc a:hover { color: #1746b0; }
-    .slide-nav { display: flex; justify-content: space-between; margin-top: 2rem; }
-    .slide-nav a { text-decoration: none; }
-    .slide-nav .button-primary, .slide-nav .button-secondary { min-width: 120px; }
-    .slide-content h1, .slide-content h2, .slide-content h3 { color: #1f2937; font-weight: 700; margin-bottom: 1rem; }
-    .slide-content p { color: #374151; font-size: 1.125rem; line-height: 1.75rem; margin-bottom: 1rem; }
-    body, html { font-family: 'Noto Sans JP', sans-serif; margin: 0; padding: 0; background: linear-gradient(135deg, #e0f2fe, #f0f4f8); min-height: 100vh; }
-    .header { background-color: #1a56db; color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; font-size: 1.25rem; font-weight: 700; border-bottom: 4px solid #1746b0; }
-    .footer { background-color: #f0f4f8; color: #1a56db; padding: 1rem 2rem; text-align: center; font-size: 0.9rem; border-top: 1px solid #d1d5db; }
-    .container { display: flex; width: 100%; min-height: 600px; }
-    .container-left { width: 70%; padding: 2rem; background-color: #ffffff; border-radius: 16px 0 0 16px; }
-    .container-right { width: 30%; padding: 2rem; background-color: #f9fafb; border-left: 1px solid #e5e7eb; border-radius: 0 16px 16px 0; }
-    .button-primary { background-color: #1a56db; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 8px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: background-color 0.3s ease; }
-    .button-primary:hover { background-color: #1746b0; }
-    .button-secondary { background-color: #f0f4f8; color: #1a56db; padding: 0.75rem 1.5rem; border: 2px solid #1a56db; border-radius: 8px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: background-color 0.3s ease; }
-    .button-secondary:hover { background-color: #dbeafe; }
-    .info-box { background-color: #e6f0ff; border-left: 4px solid #3b82f6; padding: 1rem; margin-bottom: 1.5rem; border-radius: 12px; }
-    .warning-box { background-color: #fff7e6; border-left: 4px solid #f59e0b; padding: 1rem; margin-bottom: 1.5rem; border-radius: 12px; }
-    .warning-title { color: #b45309; font-weight: 700; margin-bottom: 0.5rem; }
-    .donut-chart-container { width: 100%; max-width: 600px; margin: 2rem auto; padding: 1.5rem; background: linear-gradient(135deg, #fefce8, #f0f4f8); border-radius: 16px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); text-align: center; }
-    .donut-chart-container img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid #e5e7eb; }
-  </style>
+.toc a {
+    display: block;
+    color: #1a56db;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.toc a:hover {
+    color: #1746b0;
+}
+
+/* スライドナビゲーションボタン */
+.slide-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.slide-nav a {
+    text-decoration: none;
+}
+
+.slide-nav .button-primary,
+.slide-nav .button-secondary {
+    min-width: 120px;
+}
+
+/* スライド内のテキストスタイル */
+.slide-content h1, .slide-content h2, .slide-content h3 {
+    color: #1f2937;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.slide-content p {
+    color: #374151;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+/* フォント設定（Noto Sans JP） */
+body, html {
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #e0f2fe, #f0f4f8);
+    min-height: 100vh;
+}
+
+/* ヘッダー */
+.header {
+    background-color: #1a56db;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+    border-bottom: 4px solid #1746b0;
+}
+
+/* フッター */
+.footer {
+    background-color: #f0f4f8;
+    color: #1a56db;
+    padding: 1rem 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    border-top: 1px solid #d1d5db;
+}
+
+/* コンテナレイアウト（左70%、右30%） */
+.container {
+    display: flex;
+    width: 100%;
+    min-height: 600px;
+}
+
+.container-left {
+    width: 70%;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 16px 0 0 16px;
+}
+
+.container-right {
+    width: 30%;
+    padding: 2rem;
+    background-color: #f9fafb;
+    border-left: 1px solid #e5e7eb;
+    border-radius: 0 16px 16px 0;
+}
+
+/* プライマリボタン */
+.button-primary {
+    background-color: #1a56db;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-primary:hover {
+    background-color: #1746b0;
+}
+
+/* セカンダリボタン */
+.button-secondary {
+    background-color: #f0f4f8;
+    color: #1a56db;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #1a56db;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-secondary:hover {
+    background-color: #dbeafe;
+}
+
+/* 丸角カード（ギャラリー用） */
+.gallery-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* ギャラリーコンテナ */
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* info-box 丸角化 */
+.info-box {
+    background-color: #e6f0ff;
+    border-left: 4px solid #3b82f6;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
+}
+
+/* warning-box デザイン追加 */
+.warning-box {
+    background-color: #fff7e6;
+    border-left: 4px solid #f59e0b;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
+}
+
+.warning-title {
+    color: #b45309;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+/* グラフ表示用コンテナ */
+.donut-chart-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #fefce8, #f0f4f8);
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.donut-chart-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+}
+
+</style>
