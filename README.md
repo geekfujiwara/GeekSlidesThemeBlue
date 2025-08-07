@@ -1,0 +1,2 @@
+# GeekSlidesThemeBlue
+スライド用のテーマ
