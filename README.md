@@ -4,6 +4,15 @@
 **Tailwind CSS**と**カスタムCSS**を組み合わせて、視認性とレイアウトに優れたスライドを構築します。  
 スライドは**目的（objective）**に沿って構成され、ストーリー性のある説明が可能です。
 
+## 出力されるスライド (HTML) のイメージ
+
+<img width="1912" height="954" alt="image" src="https://github.com/user-attachments/assets/0f8c9a4d-9f4a-424e-a4e9-3e1384cd49b1" />
+
+<img width="1912" height="954" alt="image" src="https://github.com/user-attachments/assets/62a147a1-46f3-46f2-97d2-0411b8761828" />
+
+<img width="1912" height="954" alt="image" src="https://github.com/user-attachments/assets/b80b9eed-3709-4a72-95c3-17f1295aa8f0" />
+
+
 ---
 
 ## 📌 特徴
