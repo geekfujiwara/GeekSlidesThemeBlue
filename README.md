@@ -93,18 +93,12 @@ Tailwind CSSをCDNで読み込み、以下のカスタムCSSを使用してい�
 `{input}` と `{objective}` の部分は、入力から作成してください。
 
 
-実際に設定するとこのようなイメージになります。
 
-<img width="1912" height="954" alt="image" src="https://github.com/user-attachments/assets/e17d0cae-3baa-4f68-8687-0ced84974eaa" />
 
 2. AI Builder のインプットには以下を入力します。
 
 * input にスライドの元となるテキストを入力します
 * objective にスライドの目的を記述します
-
-> [!Note]
-> Power Automate では以下のようなイメージになります。
-><img width="1123" height="817" alt="image" src="https://github.com/user-attachments/assets/28f1b3c4-5ed3-4aa6-8559-baa9e8a4f3c8" />
 
 
 3. HTMLスライドが作成されます。
