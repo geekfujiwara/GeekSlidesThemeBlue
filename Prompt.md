@@ -4,4 +4,4 @@
 {BasicDesign.md}
 
 ### カスタムCSS
-{CustomCSS.md}
+{CustomCSS.css}
